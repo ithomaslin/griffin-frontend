@@ -10,14 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@heroicons/react": "^2.0.18",
+=======
+<<<<<<< Updated upstream
+=======
+    "@heroicons/react": "^1.0.6",
+>>>>>>> Stashed changes
+>>>>>>> bd78df3 (Login and register methods polished; adds Terms and Privacy pages.)
     "@popperjs/core": "^2.11.8",
     "@preline/overlay": "^1.4.0",
     "@react-three/drei": "^9.66.1",
     "@react-three/fiber": "^8.13.0",
     "@tanstack/react-table": "^8.9.1",
+    "apexcharts": "^3.42.0",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "finnhub": "^1.2.17",
     "firebase": "^9.22.1",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.4",
@@ -28,6 +37,7 @@
     "preline": "^1.8.0",
     "primereact": "^9.5.0",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
     "react-auth-kit": "^2.12.2",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

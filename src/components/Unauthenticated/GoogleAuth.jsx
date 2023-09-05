@@ -12,59 +12,46 @@ const GoogleAuthButton = ({ title }) => {
   const navigate = useNavigate();
 
   const signUpFlow = async(user) => {
-    await axios
-      .post(
-        '/v1/user/register', 
-        {
-          "email": user.email, 
-          "password": "", 
-          "external_uid": user.uid,
-          "register_via": user?.providerData[0]?.providerId
-        }, 
-        { 
-          headers: { "Content-Type": "application/json" } 
-        }
-      )
-      .then((result) => {
-        navigate('/activation', { replace: true });
-        return;
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    await axios.post(
+      '/v1/user/register', 
+      {
+        "email": user.email, 
+        "password": "", 
+        "external_uid": user.uid,
+        "register_via": user?.providerData[0]?.providerId
+      }, 
+      { headers: { "Content-Type": "application/json" } }
+    ).then((result) => {
+      navigate('/activation', { replace: true });
+      return;
+    }).catch((error) => {
+      console.log(error);
+    })
   }
 
   const signInFlow = async(user) => {
-    await axios
-      .post(
-        '/v1/user/social_login',
-        {
-          "email": user.email,
-          "external_uid": user.uid
-        },
-        {
-          headers: { "Content-Type": "application/json" }
-        }
-      )
-      .then((result) => {
-        if (signIn({
-          token: result?.data?.access_token,
-          expiresIn: result?.data?.expires_in,
-          tokenType: "Bearer",
-          refreshToken: result?.data?.refresh_token,
-          refreshTokenExpireIn: result?.data?.expires_in,
-          authState: { email: user.email, token: result?.data?.access_token, refreshToken: result?.data?.refresh_token }
-        })) {
-          // Redirect to the overview page after logging in.
-          navigate('/overview', { replace: true });
-        }          
-      })
-      .catch((error) => {
-        if (error.response?.status === 418) {
-          localStorage.setItem('tempEmail', user.email);
-          navigate('/activation', { replace: true })
-        }
-      })
+    await axios.post(
+      '/v1/user/social-login',
+      { "email": user.email, "external_uid": user.uid },
+      { headers: { "Content-Type": "application/json" } }
+    ).then((result) => {
+      if (signIn({
+        token: result?.data?.access_token,
+        expiresIn: result?.data?.expires_in,
+        tokenType: "Bearer",
+        refreshToken: result?.data?.refresh_token,
+        refreshTokenExpireIn: result?.data?.expires_in,
+        authState: { email: user.email, token: result?.data?.access_token, refreshToken: result?.data?.refresh_token }
+      })) {
+        // Redirect to the overview page after logging in.
+        navigate('/overview', { replace: true });
+      }          
+    }).catch((error) => {
+      if (error.response?.status === 418) {
+        localStorage.setItem('tempEmail', user.email);
+        navigate('/activation', { replace: true })
+      }
+    })
   }
 
   const googleSignup = async (e) => {
@@ -73,20 +60,20 @@ const GoogleAuthButton = ({ title }) => {
     await signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
-        axios
-          .get(`/v1/user/has_account/${user.email}`, { headers: { "Content-Type": "application/json" } })
-          .then((result) => {
-            if(result.data) {
-              // User already has an account, initiating the login flow
-              signInFlow(user);
-            } else {
-              // User does not have an account yet, initiating the registration flow
-              signUpFlow(user);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          })
+        axios.get(
+          `/v1/user/has_account/${user.email}`,
+          { headers: { "Content-Type": "application/json" } }
+        ).then((result) => {
+          if(result.data) {
+            // User already has an account, initiating the login flow
+            signInFlow(user);
+          } else {
+            // User does not have an account yet, initiating the registration flow
+            signUpFlow(user);
+          }
+        }).catch((error) => {
+          console.log(error);
+        })
       })
       .catch((error) => {
         console.log(error);

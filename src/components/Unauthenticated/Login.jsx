@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
 
     await axios
-      .post('/token', JSON.stringify(`grant_type=&username=${email}&password=${password}&scope=&client_id=&client_secret=`), {
+      .post('/v1/user/token-login', JSON.stringify(`grant_type=&username=${email}&password=${password}&scope=&client_id=&client_secret=`), {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         withCredentials: true
       })

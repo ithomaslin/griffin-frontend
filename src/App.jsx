@@ -1,4 +1,4 @@
-import { HomePage, LoginPage, SignupPage, ForgotPage, PortalPage, AccountPage, ActivationPage } from './pages';
+import { HomePage, LoginPage, SignupPage, ForgotPage, PortalPage, AccountPage, ActivationPage, Terms, PrivacyPolicy } from './pages';
 import { Routes, Route, Navigate, BrowserRouter, useLocation } from 'react-router-dom';
 import { UnauthenticatedLayout } from './components/Unauthenticated';
 import { AuthenticatedLayout } from './components/Authenticated';
@@ -37,6 +37,8 @@ const App = () => {
             <Route path='signup' element={<SignupPage />} />
             <Route path='forgot' element={<ForgotPage />} />
             <Route path='activation' element={<ActivationPage />} />
+            <Route path='terms' element={<Terms />} />
+            <Route path='privacy' element={<PrivacyPolicy />} />
           </Route>
 
           <Route path='/' element={<PrivateRoute Component={AuthenticatedLayout} />}>

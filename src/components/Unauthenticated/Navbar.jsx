@@ -31,9 +31,8 @@ const Navbar = () => {
             {isAuthenticated() 
             ? (<a className="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="/account">Account</a>) 
             : (<>
-                <a className="font-medium text-primary md:py-6 dark:text-blue-500" href="/" aria-current="page">Landing</a>
-                <a className="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Work</a>
-                <a className="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Blog</a>
+                <a className="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="#">Pricing</a>
+                <a className="font-medium text-gray-500 hover:text-gray-400 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="https://gryfinn.medium.com/" target='_blank'>Blog</a>
               </>)
             }
             {isAuthenticated() 

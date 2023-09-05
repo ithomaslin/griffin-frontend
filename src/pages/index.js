@@ -5,6 +5,8 @@ import ForgotPage from "./ForgotPassword/Forgot";
 import PortalPage from "./Portal/Portal";
 import AccountPage from "./Account/Account";
 import ActivationPage from "./Register/Activate";
+import Terms from "./Terms/Terms";
+import PrivacyPolicy from "./Privacy/Privacy";
 
 export {
   HomePage,
@@ -14,4 +16,6 @@ export {
   PortalPage,
   AccountPage,
   ActivationPage,
+  Terms,
+  PrivacyPolicy,
 };

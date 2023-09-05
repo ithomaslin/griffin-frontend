@@ -26,7 +26,7 @@ const Signup = () => {
     const formData = new FormData(formElement);
     formData.append('register_via', "web");
 
-    await axios.post('/register', formData, {
+    await axios.post('/v1/user/form-registration', formData, {
       headers: { "Content-Type": "miltipart/form-data" }
     })
     .then((result) => {
@@ -142,7 +142,7 @@ const Signup = () => {
                       <input id="remember-me" name="remember-me" type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-primary pointer-events-none focus:ring-primary dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                     </div>
                     <div className="ml-3">
-                      <label htmlFor="remember-me" className="text-sm dark:text-white">I accept the <a className="text-primary decoration-2 hover:underline font-medium" href="#">Terms and Conditions</a></label>
+                      <label htmlFor="remember-me" className="text-sm dark:text-white">I accept the <a className="text-primary decoration-2 hover:underline font-medium" href="/terms" target='_blank'>Terms and Conditions</a></label>
                     </div>
                   </div>
                   {/* <!-- End Checkbox --> */}
