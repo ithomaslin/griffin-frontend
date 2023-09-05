@@ -10,14 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@heroicons/react": "^2.0.18",
-=======
-<<<<<<< Updated upstream
-=======
-    "@heroicons/react": "^1.0.6",
->>>>>>> Stashed changes
->>>>>>> bd78df3 (Login and register methods polished; adds Terms and Privacy pages.)
     "@popperjs/core": "^2.11.8",
     "@preline/overlay": "^1.4.0",
     "@react-three/drei": "^9.66.1",
