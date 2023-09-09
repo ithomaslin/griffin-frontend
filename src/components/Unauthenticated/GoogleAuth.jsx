@@ -13,7 +13,7 @@ const GoogleAuthButton = ({ title }) => {
 
   const signUpFlow = async(user) => {
     await axios.post(
-      '/v1/user/register', 
+      '/v1/user/api-registration', 
       {
         "email": user.email, 
         "password": "", 
@@ -61,7 +61,7 @@ const GoogleAuthButton = ({ title }) => {
       .then((result) => {
         const user = result.user;
         axios.get(
-          `/v1/user/has_account/${user.email}`,
+          `/v1/user/has-account/${user.email}`,
           { headers: { "Content-Type": "application/json" } }
         ).then((result) => {
           if(result.data) {
@@ -70,6 +70,7 @@ const GoogleAuthButton = ({ title }) => {
           } else {
             // User does not have an account yet, initiating the registration flow
             signUpFlow(user);
+            console.log(user);
           }
         }).catch((error) => {
           console.log(error);
