@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASEURL = "http://api.tradinglab.app/api";
+const BASEURL = "https://api.tradinglab.app/api";
 
 export default axios.create({
   baseURL: BASEURL,
