@@ -6,8 +6,8 @@ const Footer = () => {
       {/* <!-- Grid --> */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
         <div className="col-span-full hidden lg:col-span-1 lg:block">
-          <a className="flex-none text-xl font-semibold dark:text-white" href="#" aria-label="Brand">Griffin</a>
-          <p className="mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">© 2022 Neat Digital.</p>
+          <a className="flex-none text-xl font-semibold dark:text-white" href="/" aria-label="Brand">TradingLab</a>
+          <p className="mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">© 2022 Neat Inc.</p>
         </div>
         {/* <!-- End Col --> */}
 
@@ -54,7 +54,7 @@ const Footer = () => {
           <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">Developers</h4>
 
           <div className="mt-3 grid space-y-3 text-sm">
-            <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" href="#">Api</a></p>
+            <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" href="https://api.tradinglab.app">Api</a></p>
             {/* <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" href="#">Status</a></p> */}
             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" href="https://github.com/Neat-Inc" target='_blank'>GitHub</a> <span className="inline text-primary dark:text-blue-500">— New</span></p>
           </div>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           <div className="flex justify-between items-center">
             <div className="mt-3 sm:hidden">
-              <a className="flex-none text-xl font-semibold dark:text-white" href="#" aria-label="Brand">Griffin</a>
+              <a className="flex-none text-xl font-semibold dark:text-white" href="/" aria-label="Brand">TradingLab</a>
               <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">© 2022 Neat.</p>
             </div>
 

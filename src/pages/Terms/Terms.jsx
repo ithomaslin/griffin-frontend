@@ -14,7 +14,7 @@ const Terms = () => {
                   <div>
                     <ul className="text-xs text-gray-500">
                       <li className="inline-block relative pr-6 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
-                        Last modified: July 14, 2022
+                        Last modified: Sep 22, 2023
                       </li>
                     </ul>
                   </div>
@@ -31,7 +31,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold md:text-3xl dark:text-white">Terms of Services</h2>
               <p className="text-sm text-gray-800 dark:text-gray-200">
                 Please read these Terms of Services &#40;&ldquo;Terms&rdquo;, &ldquo;Terms of Services&rdquo;&#41; 
-                carefully before using the <span className='text-secondary'>https://grifinn.neat.tw/</span> website &#40;the &ldquo;Service&rdquo;&#41; operated 
+                carefully before using the <span className='text-secondary'>https://tradinglab.app/</span> website &#40;the &ldquo;Service&rdquo;&#41; operated 
                 by Neat Digital Solutions LLC &#40;&ldquo;us&rdquo;, &ldquo;we&rdquo;, or &ldquo;our&rdquo;&#41;.
               </p>
               <p className="text-sm text-gray-800 dark:text-gray-200">

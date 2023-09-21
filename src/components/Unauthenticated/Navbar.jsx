@@ -11,8 +11,8 @@ const Navbar = () => {
       <nav className="mt-6 relative max-w-7xl w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700" aria-label="Global">
         <div className="flex items-center justify-between">
           {isAuthenticated() 
-            ? <a className="flex-none text-l font-semibold text-primary dark:text-white logo" href="/portal" aria-label="Brand">GRIFFIN</a> 
-            : <a className="flex-none text-l font-semibold text-primary dark:text-white logo" href="/" aria-label="Brand">GRIFFIN</a>
+            ? <a className="flex-none text-l font-semibold text-primary dark:text-white logo" href="/portal" aria-label="Brand">TradingLab</a> 
+            : <a className="flex-none text-l font-semibold text-primary dark:text-white logo" href="/" aria-label="Brand">TradingLab</a>
           }
           
           <div className="md:hidden">
