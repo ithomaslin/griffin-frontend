@@ -19,7 +19,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#f14b23"
+        primary: "#494bb9",
+        secondary: "#06a7c1",
+        tertiary: "#2f75bd",
       },
       spacing: {
         '128': '32rem',

@@ -4,8 +4,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Testimonial />
+      {/* <About />
+      <Testimonial /> */}
     </>
   );
 }

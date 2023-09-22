@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:yellow;">commit 7d20f55a6d85412a277f22123c4516cfe6ec5510</span>
+Author: Thomas Lin &lt;ithomaslin@gmail.com&gt;
+Date:   Fri Sep 22 01:07:00 2023 +0800
+
+    Fixing typo - all api requests should be sent via https.
+
+<span style="font-weight:bold;color:yellow;">diff --git a/src/api/axios.jsx b/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:yellow;">index cbe3caf..7c45912 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:yellow;">+++ b/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -1,6 +1,6 @@</span>
+ import axios from &quot;axios&quot;;
+ 
+<span style="color:red;">-const BASEURL = &quot;http://api.tradinglab.app/api&quot;;</span>
+<span style="color:lime;">+</span><span style="color:lime;">const BASEURL = &quot;https://api.tradinglab.app/api&quot;;</span>
+ 
+ export default axios.create({
+   baseURL: BASEURL,
+
+<span style="color:yellow;">commit e2e7d5eb5afec8451aaad10ff1b95be278ee190e</span>
+Author: Thomas Lin &lt;ithomaslin@gmail.com&gt;
+Date:   Fri Sep 22 00:43:38 2023 +0800
+
+    Rebrand
+
+<span style="font-weight:bold;color:yellow;">diff --git a/index.html b/index.html</span>
+<span style="font-weight:bold;color:yellow;">index e397167..12a1590 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/index.html</span>
+<span style="font-weight:bold;color:yellow;">+++ b/index.html</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -5,7 +5,7 @@</span>
+     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+     &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/public/griffin.svg&quot; /&gt;
+     &lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css&quot; rel=&quot;stylesheet&quot; /&gt;
+<span style="color:red;">-    &lt;title&gt;Griffin&lt;/title&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">    &lt;title&gt;TradingLab&lt;/title&gt;</span>
+   &lt;/head&gt;
+   &lt;body&gt;
+     &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+<span style="font-weight:bold;color:yellow;">diff --git a/src/api/axios.jsx b/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:yellow;">index bb5f7e6..cbe3caf 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:yellow;">+++ b/src/api/axios.jsx</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -1,6 +1,6 @@</span>
+ import axios from &quot;axios&quot;;
+ 
+<span style="color:red;">-const BASEURL = &quot;http://127.0.0.1:8000/api&quot;;</span>
+<span style="color:lime;">+</span><span style="color:lime;">const BASEURL = &quot;http://api.tradinglab.app/api&quot;;</span>
+ 
+ export default axios.create({
+   baseURL: BASEURL,
+<span style="font-weight:bold;color:yellow;">diff --git a/src/components/Unauthenticated/Footer.jsx b/src/components/Unauthenticated/Footer.jsx</span>
+<span style="font-weight:bold;color:yellow;">index 59fd5cb..2ad0035 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/src/components/Unauthenticated/Footer.jsx</span>
+<span style="font-weight:bold;color:yellow;">+++ b/src/components/Unauthenticated/Footer.jsx</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -6,8 +6,8 @@</span> const Footer = () =&gt; {
+       {/* &lt;!-- Grid --&gt; */}
+       &lt;div className=&quot;grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10&quot;&gt;
+         &lt;div className=&quot;col-span-full hidden lg:col-span-1 lg:block&quot;&gt;
+<span style="color:red;">-          &lt;a className=&quot;flex-none text-xl font-semibold dark:text-white&quot; href=&quot;#&quot; aria-label=&quot;Brand&quot;&gt;Griffin&lt;/a&gt;</span>
+<span style="color:red;">-          &lt;p className=&quot;mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400&quot;&gt;© 2022 Neat Digital.&lt;/p&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">          &lt;a className=&quot;flex-none text-xl font-semibold dark:text-white&quot; href=&quot;/&quot; aria-label=&quot;Brand&quot;&gt;TradingLab&lt;/a&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">          &lt;p className=&quot;mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400&quot;&gt;© 2022 Neat Inc.&lt;/p&gt;</span>
+         &lt;/div&gt;
+         {/* &lt;!-- End Col --&gt; */}
+ 
+<span style="font-weight:bold;color:fuchsia;">@@ -54,7 +54,7 @@</span> const Footer = () =&gt; {
+           &lt;h4 className=&quot;text-xs font-semibold text-gray-900 uppercase dark:text-gray-100&quot;&gt;Developers&lt;/h4&gt;
+ 
+           &lt;div className=&quot;mt-3 grid space-y-3 text-sm&quot;&gt;
+<span style="color:red;">-            &lt;p&gt;&lt;a className=&quot;inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200&quot; href=&quot;#&quot;&gt;Api&lt;/a&gt;&lt;/p&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">            &lt;p&gt;&lt;a className=&quot;inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200&quot; href=&quot;https://api.tradinglab.app&quot;&gt;Api&lt;/a&gt;&lt;/p&gt;</span>
+             {/* &lt;p&gt;&lt;a className=&quot;inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200&quot; href=&quot;#&quot;&gt;Status&lt;/a&gt;&lt;/p&gt; */}
+             &lt;p&gt;&lt;a className=&quot;inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200&quot; href=&quot;https://github.com/Neat-Inc&quot; target='_blank'&gt;GitHub&lt;/a&gt; &lt;span className=&quot;inline text-primary dark:text-blue-500&quot;&gt;— New&lt;/span&gt;&lt;/p&gt;
+           &lt;/div&gt;
+<span style="font-weight:bold;color:fuchsia;">@@ -74,7 +74,7 @@</span> const Footer = () =&gt; {
+ 
+           &lt;div className=&quot;flex justify-between items-center&quot;&gt;
+             &lt;div className=&quot;mt-3 sm:hidden&quot;&gt;
+<span style="color:red;">-              &lt;a className=&quot;flex-none text-xl font-semibold dark:text-white&quot; href=&quot;#&quot; aria-label=&quot;Brand&quot;&gt;Griffin&lt;/a&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">              &lt;a className=&quot;flex-none text-xl font-semibold dark:text-white&quot; href=&quot;/&quot; aria-label=&quot;Brand&quot;&gt;TradingLab&lt;/a&gt;</span>
+               &lt;p className=&quot;mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400&quot;&gt;© 2022 Neat.&lt;/p&gt;
+             &lt;/div&gt;
+ 
+<span style="font-weight:bold;color:yellow;">diff --git a/src/components/Unauthenticated/Navbar.jsx b/src/components/Unauthenticated/Navbar.jsx</span>
+<span style="font-weight:bold;color:yellow;">index c65fc50..aa9ada4 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/src/components/Unauthenticated/Navbar.jsx</span>
+<span style="font-weight:bold;color:yellow;">+++ b/src/components/Unauthenticated/Navbar.jsx</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -11,8 +11,8 @@</span> const Navbar = () =&gt; {
+       &lt;nav className=&quot;mt-6 relative max-w-7xl w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700&quot; aria-label=&quot;Global&quot;&gt;
+         &lt;div className=&quot;flex items-center justify-between&quot;&gt;
+           {isAuthenticated() 
+<span style="color:red;">-            ? &lt;a className=&quot;flex-none text-l font-semibold text-primary dark:text-white logo&quot; href=&quot;/portal&quot; aria-label=&quot;Brand&quot;&gt;GRIFFIN&lt;/a&gt; </span>
+<span style="color:red;">-            : &lt;a className=&quot;flex-none text-l font-semibold text-primary dark:text-white logo&quot; href=&quot;/&quot; aria-label=&quot;Brand&quot;&gt;GRIFFIN&lt;/a&gt;</span>
+<span style="color:lime;">+</span><span style="color:lime;">            ? &lt;a className=&quot;flex-none text-l font-semibold text-primary dark:text-white logo&quot; href=&quot;/portal&quot; aria-label=&quot;Brand&quot;&gt;TradingLab&lt;/a&gt;</span><span style="background-color:red;"> </span>
+<span style="color:lime;">+</span><span style="color:lime;">            : &lt;a className=&quot;flex-none text-l font-semibold text-primary dark:text-white logo&quot; href=&quot;/&quot; aria-label=&quot;Brand&quot;&gt;TradingLab&lt;/a&gt;</span>
+           }
+           
+           &lt;div className=&quot;md:hidden&quot;&gt;
+<span style="font-weight:bold;color:yellow;">diff --git a/src/pages/Terms/Terms.jsx b/src/pages/Terms/Terms.jsx</span>
+<span style="font-weight:bold;color:yellow;">index ba916c0..4ddf5f5 100644</span>
+<span style="font-weight:bold;color:yellow;">--- a/src/pages/Terms/Terms.jsx</span>
+<span style="font-weight:bold;color:yellow;">+++ b/src/pages/Terms/Terms.jsx</span>
+<span style="font-weight:bold;color:fuchsia;">@@ -14,7 +14,7 @@</span> const Terms = () =&gt; {
+                   &lt;div&gt;
+                     &lt;ul className=&quot;text-xs text-gray-500&quot;&gt;
+                       &lt;li className=&quot;inline-block relative pr-6 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600&quot;&gt;
+<span style="color:red;">-                        Last modified: July 14, 2022</span>
+<span style="color:lime;">+</span><span style="color:lime;">                        Last modified: Sep 22, 2023</span>
+                       &lt;/li&gt;
+                     &lt;/ul&gt;
+                   &lt;/div&gt;
+<span style="font-weight:bold;color:fuchsia;">@@ -31,7 +31,7 @@</span> const Terms = () =&gt; {
+               &lt;h2 className=&quot;text-2xl font-bold md:text-3xl dark:text-white&quot;&gt;Terms of Services&lt;/h2&gt;
+               &lt;p className=&quot;text-sm text-gray-800 dark:text-gray-200&quot;&gt;
+                 Please read these Terms of Services &amp;#40;&amp;ldquo;Terms&amp;rdquo;, &amp;ldquo;Terms of Services&amp;rdquo;&amp;#41; 
+<span style="color:red;">-                carefully before using the &lt;span className='text-secondary'&gt;https://grifinn.neat.tw/&lt;/span&gt; website &amp;#40;the &amp;ldquo;Service&amp;rdquo;&amp;#41; operated </span>
+<span style="color:lime;">+</span><span style="color:lime;">                carefully before using the &lt;span className='text-secondary'&gt;https://tradinglab.app/&lt;/span&gt; website &amp;#40;the &amp;ldquo;Service&amp;rdquo;&amp;#41; operated</span><span style="background-color:red;"> </span>
+                 by Neat Digital Solutions LLC &amp;#40;&amp;ldquo;us&amp;rdquo;, &amp;ldquo;we&amp;rdquo;, or &amp;ldquo;our&amp;rdquo;&amp;#41;.
+               &lt;/p&gt;
+               &lt;p className=&quot;text-sm text-gray-800 dark:text-gray-200&quot;&gt;
+</pre>
+</body>
+</html>
