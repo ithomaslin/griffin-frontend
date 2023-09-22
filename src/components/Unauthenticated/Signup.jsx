@@ -26,15 +26,15 @@ const Signup = () => {
     const formData = new FormData(formElement);
     formData.append('register_via', "web");
 
-    await axios.post('/v1/user/form-registration', formData, {
-      headers: { "Content-Type": "miltipart/form-data" }
-    })
-    .then((result) => {
-      navigate('/activation', { replace: true });
-    })
-    .catch((error) => {
-      toast.error(error.response?.data?.detail);
-    })
+    // await axios.post('/v1/user/form-registration', formData, {
+    //   headers: { "Content-Type": "miltipart/form-data" }
+    // })
+    // .then((result) => {
+    //   navigate('/activation', { replace: true });
+    // })
+    // .catch((error) => {
+    //   toast.error(error.response?.data?.detail);
+    // })
   };
 
   return (

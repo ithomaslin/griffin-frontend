@@ -20,32 +20,32 @@ const Login = () => {
   const submitLogin = async (e) => {
     e.preventDefault();
 
-    await axios
-      .post('/v1/user/token-login', JSON.stringify(`grant_type=&username=${email}&password=${password}&scope=&client_id=&client_secret=`), {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        withCredentials: true
-      })
-      .then((result) => {
-        const signInResult = signIn({
-          token: result?.data?.access_token,
-          expiresIn: result?.data?.expires_in,
-          tokenType: "Bearer",
-          refreshToken: result?.data?.refresh_token,
-          refreshTokenExpireIn: result?.data?.expires_in,
-          authState: { email: email, token: result?.data?.access_token, refreshToken: result?.data?.refresh_token }
-        });
-        if (signInResult) {
-          navigate('/overview', { replace: true });
-        }
-      })
-      .catch((error) => {
-        if (error.response?.status === 418) {
-          localStorage.setItem('tempEmail', email);
-          navigate('/activation', { replace: true })
-        } else {
-          toast.error(error.response?.data?.detail);
-        }
-      })
+    // await axios
+    //   .post('/v1/user/token-login', JSON.stringify(`grant_type=&username=${email}&password=${password}&scope=&client_id=&client_secret=`), {
+    //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //     withCredentials: true
+    //   })
+    //   .then((result) => {
+    //     const signInResult = signIn({
+    //       token: result?.data?.access_token,
+    //       expiresIn: result?.data?.expires_in,
+    //       tokenType: "Bearer",
+    //       refreshToken: result?.data?.refresh_token,
+    //       refreshTokenExpireIn: result?.data?.expires_in,
+    //       authState: { email: email, token: result?.data?.access_token, refreshToken: result?.data?.refresh_token }
+    //     });
+    //     if (signInResult) {
+    //       navigate('/overview', { replace: true });
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     if (error.response?.status === 418) {
+    //       localStorage.setItem('tempEmail', email);
+    //       navigate('/activation', { replace: true })
+    //     } else {
+    //       toast.error(error.response?.data?.detail);
+    //     }
+    //   })
   };
 
   return (

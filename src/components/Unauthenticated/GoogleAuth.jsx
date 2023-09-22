@@ -57,28 +57,28 @@ const GoogleAuthButton = ({ title }) => {
   const googleSignup = async (e) => {
     e.preventDefault();
 
-    await signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        const user = result.user;
-        axios.get(
-          `/v1/user/has-account/${user.email}`,
-          { headers: { "Content-Type": "application/json" } }
-        ).then((result) => {
-          if(result.data) {
-            // User already has an account, initiating the login flow
-            signInFlow(user);
-          } else {
-            // User does not have an account yet, initiating the registration flow
-            signUpFlow(user);
-            console.log(user);
-          }
-        }).catch((error) => {
-          console.log(error);
-        })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    // await signInWithPopup(auth, googleProvider)
+    //   .then((result) => {
+    //     const user = result.user;
+    //     axios.get(
+    //       `/v1/user/has-account/${user.email}`,
+    //       { headers: { "Content-Type": "application/json" } }
+    //     ).then((result) => {
+    //       if(result.data) {
+    //         // User already has an account, initiating the login flow
+    //         signInFlow(user);
+    //       } else {
+    //         // User does not have an account yet, initiating the registration flow
+    //         signUpFlow(user);
+    //         console.log(user);
+    //       }
+    //     }).catch((error) => {
+    //       console.log(error);
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   })
   }
 
   return (
