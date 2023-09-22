@@ -64,12 +64,12 @@ const AuthenticatedLayout = () => {
                 <div className="flex justify-start items-center">
                   
                   <a href="/overview" className="flex items-center justify-between mr-4">
-                    <img
+                    {/* <img
                       src={ Icon.logo }
                       className="mr-3 h-8"
                       alt="Griffin Logo"
-                    />
-                    <span className="self-center logo flex-none text-l font-semibold text-primary whitespace-nowrap dark:text-white">GRIFFIN</span>
+                    /> */}
+                    <span className="self-center logo flex-none text-l font-semibold text-primary whitespace-nowrap dark:text-white">TradingLab</span>
                   </a>
                   {/* <form action="#" method="GET" className="hidden md:block md:pl-2">
                     <label htmlFor="topbar-search" className="sr-only">Search</label>
