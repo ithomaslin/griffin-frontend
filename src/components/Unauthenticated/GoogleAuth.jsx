@@ -13,12 +13,12 @@ const GoogleAuthButton = ({ title }) => {
 
   const signUpFlow = async(user) => {
     await axios.post(
-      '/v1/user/api-registration', 
+      '/user/create', 
       {
         "email": user.email, 
-        "password": "", 
-        "external_uid": user.uid,
-        "register_via": user?.providerData[0]?.providerId
+        "password": user.uid,
+        "register_via": user?.providerData[0]?.providerId,
+        "external_uid": true,
       }, 
       { headers: { "Content-Type": "application/json" } }
     ).then((result) => {
@@ -31,8 +31,8 @@ const GoogleAuthButton = ({ title }) => {
 
   const signInFlow = async(user) => {
     await axios.post(
-      '/v1/user/social-login',
-      { "email": user.email, "external_uid": user.uid },
+      '/user/social-login',
+      { "email": user.email, "external_uid": true, "password": user.uid },
       { headers: { "Content-Type": "application/json" } }
     ).then((result) => {
       if (signIn({
@@ -57,28 +57,30 @@ const GoogleAuthButton = ({ title }) => {
   const googleSignup = async (e) => {
     e.preventDefault();
 
-    // await signInWithPopup(auth, googleProvider)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     axios.get(
-    //       `/v1/user/has-account/${user.email}`,
-    //       { headers: { "Content-Type": "application/json" } }
-    //     ).then((result) => {
-    //       if(result.data) {
-    //         // User already has an account, initiating the login flow
-    //         signInFlow(user);
-    //       } else {
-    //         // User does not have an account yet, initiating the registration flow
-    //         signUpFlow(user);
-    //         console.log(user);
-    //       }
-    //     }).catch((error) => {
-    //       console.log(error);
-    //     })
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   })
+    await signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
+        axios.get(
+          `/user/has-account/${user.email}`,
+          { headers: { "Content-Type": "application/json" } }
+        ).then((result) => {
+          console.log(result);
+          if(result.data?.details?.user) {
+            // User already has an account, initiating the login flow
+            console.log("User exists, signing in...");
+            signInFlow(user);
+          } else {
+            // User does not have an account yet, initiating the registration flow
+            console.log("User does not exist, signing up...");
+            signUpFlow(user);
+          }
+        }).catch((error) => {
+          console.log(error);
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
   return (

@@ -24,17 +24,17 @@ const Signup = () => {
 
     const formElement = document.querySelector("form");
     const formData = new FormData(formElement);
-    formData.append('register_via', "web");
+    formData.append('register_via', "native-web");
 
-    // await axios.post('/v1/user/form-registration', formData, {
-    //   headers: { "Content-Type": "miltipart/form-data" }
-    // })
-    // .then((result) => {
-    //   navigate('/activation', { replace: true });
-    // })
-    // .catch((error) => {
-    //   toast.error(error.response?.data?.detail);
-    // })
+    await axios.post('/user/create/form', formData, {
+      headers: { "Content-Type": "miltipart/form-data" }
+    })
+    .then((result) => {
+      navigate('/activation', { replace: true });
+    })
+    .catch((error) => {
+      toast.error(error.response?.data?.detail);
+    })
   };
 
   return (

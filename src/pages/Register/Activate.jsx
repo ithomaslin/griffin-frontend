@@ -17,7 +17,7 @@ const ActivationPage = () => {
     const email = localStorage.getItem('tempEmail');
 
     await axios
-      .get(`/v1/user/reissue-activation-code/${email}`)
+      .get(`/user/reissue-activation-code/${email}`)
       .then((result) => {
         console.log(result);
         toast("New activation link has been sent to your email inbox.");
@@ -39,7 +39,7 @@ const ActivationPage = () => {
       if (activationCode) {
         console.log(activationCode);
         axios
-          .get(`/v1/user/activate/${activationCode}`, {
+          .get(`/user/activate/${activationCode}`, {
             headers: { 'Content-Type': 'application/json' }
           })
           .then((res) => {

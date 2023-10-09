@@ -12,16 +12,27 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1280px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1536px',
+      // => @media (min-width: 1280px) { ... }
     },
     extend: {
       colors: {
-        primary: "#494bb9",
-        secondary: "#06a7c1",
-        tertiary: "#2f75bd",
+        primary: "#8BA5FF",
+        secondary: "#3699db",
+        tertiary: "#2F4050",
+        shadow: "#232E3A",
+        accent: "#F7F7F9",
+        positive: "#009D10",
+        negative: "#FF6666",
       },
       spacing: {
         '128': '32rem',
